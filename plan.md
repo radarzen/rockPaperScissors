@@ -30,6 +30,8 @@
 9. End loop
 10. Calculate winner:
     1.  If computerScore < humanScore
-        1.  Display "You lose.  You're a loser!"
-    2.  If computerScore > humanScore
         1.  Display "You win!  You're a winner!"
+    2.  If computerScore > humanScore
+        1.  Display "You lose.  You're a loser!"
+    3.  If computerScore === humanScore
+        1.  Display "It's a tie!"
