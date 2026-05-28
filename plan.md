@@ -12,26 +12,29 @@
 3. Create Human Choice function {getHumanChoice}
    1. Prompt user for choice 1-3 (1=R, 2=P, 3=S)
    2. Return {humanChoiceVar}
-4. Start loop for gameLoop times
-5. Call getComputerChoice
-6. Call getHumanChoice (assume valid choice selected)
-7. Calculate Winner:
-   1. if computerChoiceVar === humanChoiceVar
-      1. end turn in draw
-   2. else if computerChoiceVar === 3 && humanChoiceVar === 1
-      1. humanScore + 1
-   3. else if computerChoiceVar === 1 && humanChoiceVar === 3
-      1. computerScore + 1
-   4. else if computerChoiceVar > humanChoiceVar
-      1. computerScore + 1
-   5. else computerChoiceVar < humanChoiceVar
-      1. humanScore + 1
-8. Display current score
-9. End loop
-10. Calculate winner:
-    1.  If computerScore < humanScore
-        1.  Display "You win!  You're a winner!"
-    2.  If computerScore > humanScore
-        1.  Display "You lose.  You're a loser!"
-    3.  If computerScore === humanScore
-        1.  Display "It's a tie!"
+4. Create function to play a single round {playRound}
+   1. Call getComputerChoice
+   2. Call getHumanChoice (assume valid choice selected)
+   3. Calculate Winner:
+      1. if computerChoiceVar === humanChoiceVar
+         1. end turn in draw
+      2. else if computerChoiceVar === 3 && humanChoiceVar === 1
+         1. humanScore + 1
+      3. else if computerChoiceVar === 1 && humanChoiceVar === 3
+         1. computerScore + 1
+      4. else if computerChoiceVar > humanChoiceVar
+         1. computerScore + 1
+      5. else computerChoiceVar < humanChoiceVar
+         1. humanScore + 1
+      6. Return {computerChoiceVar} & {humanChoiceVar}
+5. Start loop for gameLoop times
+   1. Call playRound
+   2. Display current scores
+6. End loop
+7. Calculate winner:
+    1. If computerScore < humanScore
+       1. Display "You win!  You're a winner!"
+    2. If computerScore > humanScore
+        1. Display "You lose.  You're a loser!"
+    3. If computerScore === humanScore
+        1. Display "It's a tie!"
